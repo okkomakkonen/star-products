@@ -1,12 +1,7 @@
 load("star_products.sage")
 
-from sage.coding.grs_code import *
-
-alpha = vector(GF(7), [0, 1, 2, 3, 4, 5])
-beta  = vector(GF(7), [1, 2, 3, 4, 5, 6])
-
-A = GeneralizedReedSolomonCode(alpha, dimension=3)
-B = GeneralizedReedSolomonCode(beta, dimension=3)
+A = LinearCode(matrix(GF(11), [[1, 0, 0, 6, 4, 6], [0, 1, 0, 10, 10, 3], [0, 0, 1, 7, 9, 3]]))
+B = LinearCode(matrix(GF(11), [[1, 0, 0, 2, 6, 1], [0, 1, 0, 2, 7, 4], [0, 0, 1, 8, 10, 7]]))
 
 assert is_mds(A) and is_mds(B)
 
@@ -14,10 +9,8 @@ l = 2
 
 sum_A = sum_dimensions(A, l)
 
-print(sum_A)  # prints 39462150
+print(sum_A)
 
 sum_B = sum_dimensions(B, l)
 
-print(sum_B)  # prints 39462150
-
-# These are equal
+print(sum_B)
