@@ -7,12 +7,8 @@ assert is_mds(A) and is_mds(B)
 
 l = 2
 
-sum_A = sum_dimensions(A, l)
+sum_A = sum_dimensions(A, l)  # prints 39415494
 
-print(sum_A)  # prints 39415494
+sum_B = sum_dimensions(B, l)  # prints 39462150
 
-sum_B = sum_dimensions(B, l)
-
-print(sum_B)  # prints 39462150
-
-# These will be different even though both codes are [6, 3] MDS codes
+# These are different even though both codes are [6, 3]_7 MDS codes
